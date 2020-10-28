@@ -21,7 +21,7 @@ function addStorage()
             expense=Number(expense)+Number(amount);
             document.getElementById('money-minus').textContent="$"+expense;
      }
-     //document.getElementById('list').innerHTML=text+"........."+amount;
+     
      balance=Number(income)+Number(expense);
      document.getElementById('balance').textContent="$"+balance;
 }
