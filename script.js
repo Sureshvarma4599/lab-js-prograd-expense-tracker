@@ -1,16 +1,16 @@
-let income=0;
-let expense=0;
-let balance;
-function addStorage()
+var income=0;
+var expense=0;
+var balance;
+function addTransaction()
 {
     var text=document.getElementById("text").value;
     var amount=document.getElementById("amount").value
     localStorage.setItem(text,amount);
-    //console.log(JSON.parse(localStorage.getItem(text,amount)));
-    var display = document.createElement('div');
-    display.setAttribute("id","list1");
-    console.log(display);
-    document.getElementById('list').appendChild(display).innerHTML=text+"........."+amount;
+    console.log(JSON.parse(localStorage.getItem(text,amount)));
+    var transaction = document.createElement('div');
+    transaction.setAttribute("id","list1");
+    console.log( transaction );
+    document.getElementById('list').appendChild(transaction).innerHTML=text+""+amount;
    if((Math.sign(amount))==1)
      {
         income=Number(income)+Number(amount);
@@ -21,7 +21,7 @@ function addStorage()
             expense=Number(expense)+Number(amount);
             document.getElementById('money-minus').textContent="$"+expense;
      }
-     //document.getElementById('list').innerHTML=text+"........."+amount;
+     
      balance=Number(income)+Number(expense);
      document.getElementById('balance').textContent="$"+balance;
 }
